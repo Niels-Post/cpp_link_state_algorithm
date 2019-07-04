@@ -3,6 +3,10 @@ C++ Link State Algorithm Library
 
 An abstract implementation of the Link State Routing algorithm.
 
+Code standard: C++17
+
+This library is part of my IPASS end project, for the first year of my HBO-ICT study at Hogeschool Utrecht in 2019.
+
 Features 
 ---
 - A method for automatically cleaning up unreachable nodes
@@ -10,7 +14,7 @@ Features
 
 Dependencies
 -----
-Since this library was originally used for an embedded project, the included makefile is built for [BMPTK](http://github.com/wovo/bmptk).
+Since this library was originally used for an embedded project, the included makefile is written for [BMPTK](http://github.com/wovo/bmptk).
 However, the library can also be compiled without BMPTK, or just directly included, since it's header only. 
 
 
