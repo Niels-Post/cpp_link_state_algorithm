@@ -17,8 +17,8 @@ However, the library can also be compiled without BMPTK, or just directly includ
 Installation/usage
 -----
 - Download the library `git clone https://github.com/Niels-Post/cpp_link_state_algorithm`
-- Include Makefile.inc from your project
-    **OR**
+- Include *Makefile.inc* from your project
+- **OR**
 - Include *calculator.h* in your project
 
 Building with BMPTK
