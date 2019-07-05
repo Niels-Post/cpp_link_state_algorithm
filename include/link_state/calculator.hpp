@@ -11,6 +11,7 @@
 #define IPASS_LINK_STATE_CALCULATOR_HPP
 
 #include <link_state/node.hpp>
+#include <cout_debug.hpp>
 
 namespace link_state {
     /**
@@ -187,13 +188,14 @@ namespace link_state {
                 node<id_type, cost_type, max_edges> &current_node = nodes[i];
                 current_node.shortest_path_known = false;
                 current_node.distance = max_distance;
-                for (size_t j = 0; j < current_node.edge_count; j++) {
-                    if (current_node.edges[j] == source_node.id && current_node.edge_costs[j] < current_node.distance) {
+                for (size_t j = 0; j < source_node.edge_count; j++) {
+                    if (source_node.edges[j] == current_node.id && source_node.edge_costs[j] < current_node.distance) {
                         current_node.distance = current_node.edge_costs[j];
                         current_node.previous_node = source_node.id;
                         break;
                     }
                 }
+                LOG("Found dist", current_node.distance);
             }
         }
 
@@ -221,7 +223,6 @@ namespace link_state {
 
                 if (min_distance == max_distance) { //Fucked, ABORT todo: request routing update
                     return;
-                } else {
                 }
 
                 node<id_type, cost_type, max_edges> &current_node = nodes[min_distance_node];
@@ -263,6 +264,7 @@ namespace link_state {
                 setup();
                 loop();
             }
+
 
             for (uint8_t current_node = 0; current_node < node_count; current_node++) {
                 if (nodes[current_node].distance == max_distance) {
