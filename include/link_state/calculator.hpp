@@ -11,6 +11,7 @@
 #define IPASS_LINK_STATE_CALCULATOR_HPP
 
 #include <link_state/node.hpp>
+#include <cout_debug.hpp>
 
 namespace link_state {
     /**
@@ -189,7 +190,7 @@ namespace link_state {
                 current_node.distance = max_distance;
                 for (size_t j = 0; j < source_node.edge_count; j++) {
                     if (source_node.edges[j] == current_node.id && source_node.edge_costs[j] < current_node.distance) {
-                        current_node.distance = current_node.edge_costs[j];
+                        current_node.distance = source_node.edge_costs[j];
                         current_node.previous_node = source_node.id;
                         break;
                     }
