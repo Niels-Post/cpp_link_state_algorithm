@@ -11,7 +11,6 @@
 #define IPASS_LINK_STATE_CALCULATOR_HPP
 
 #include <link_state/node.hpp>
-#include <cout_debug.hpp>
 
 namespace link_state {
     /**
@@ -195,7 +194,6 @@ namespace link_state {
                         break;
                     }
                 }
-                LOG("Found dist", current_node.distance);
             }
         }
 
